@@ -35,7 +35,6 @@ def main():
     for entry in entry_points:
         print(entry)
         run_module(entry[0], entry[1])
-        reset_args()
 
 if __name__ == "__main__":
     main()

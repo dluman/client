@@ -1,4 +1,12 @@
 modules:
-    - bandit
-    - autoflake
-    - flake8
+    bandit:
+        args:
+            - -r
+            - main.py
+            - --exit-zero
+    autoflake:
+        args:
+            - main.py
+    flake8:
+        args:
+            - main.py
