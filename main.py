@@ -1,6 +1,5 @@
 import sys
 import yaml
-import types
 import pkg_resources
 
 def reset_args() -> None:
