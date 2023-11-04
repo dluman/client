@@ -16,9 +16,6 @@ def load_config(filename: str = "config.yaml") -> dict:
     modules = yaml.safe_load("config.yaml")
     with open("config.yaml", "r") as fh:
         config = yaml.safe_load(fh)
-    for module in config["modules"]:
-        # Provide a blank key to be filled in when entry point discovered
-        config["modules"][module]["entry"] = ""
     return config
 
 def discover_modules(modules: list = [], mod_group: str = "console_scripts") -> list[pkg_resources.EntryPoint]:
