@@ -1,0 +1,4 @@
+modules:
+    - bandit
+    - autoflake
+    - flake8
