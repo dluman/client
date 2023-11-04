@@ -12,7 +12,6 @@ def reset_args() -> None:
 
 def load_config(filename: str = "config.yaml") -> dict:
     """ Loads the configuration file """
-    modules = yaml.safe_load("config.yaml")
     with open("config.yaml", "r") as fh:
         config = yaml.safe_load(fh)
     return config
