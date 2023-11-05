@@ -42,7 +42,7 @@ def main():
     # For each discovered module, run the process
     for entry in entry_points:
         # Run the module by providing the module entry and the args
-        run_module(entry[0], entry[1])
+        run_module(entry_point = entry[0], arguments = entry[1])
         # Blast the previously-supplied args
         reset_args()
 
