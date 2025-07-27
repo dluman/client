@@ -6,7 +6,7 @@ Test a single or series of Python CLI programs all at once!
 
 Ever needed to test a series of command line scripts with flexible YAML-based arguments? Me neither -- until I did!
 
-Provide a list of Python CLI invocations along with their associated command line arguments in a `.client.yaml` file, and go to it!
+Provide a list of Python CLI invocations along with their associated command line arguments in a `teleplay.yaml` file, and go to it!
 
 ## Example
 
