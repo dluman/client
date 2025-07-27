@@ -1,6 +1,0 @@
-modules:
-    paperpc:
-        args:
-            - main.ppc
-            - --inputs [2,3]
-        outcome: 5
