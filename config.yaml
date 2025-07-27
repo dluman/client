@@ -1,12 +1,6 @@
 modules:
-    bandit:
+    paperpc:
         args:
-            - -r
-            - main.py
-            - --exit-zero
-    autoflake:
-        args:
-            - main.py
-    flake8:
-        args:
-            - main.py
+            - main.ppc
+            - --inputs [2,3]
+        outcome: 5
