@@ -16,11 +16,11 @@ def reset_args() -> None:
 def load_config(filename: str = "config.yaml") -> dict:
     """ Loads the configuration file """
     try:
-        with open(".client.yaml", "r") as fh:
+        with open("teleplay.yaml", "r") as fh:
             config = yaml.safe_load(fh)
         return config
     except FileNotFoundError:
-        print("[ERROR] Could not find .client.yaml file")
+        print("[ERROR] Could not find teleplay.yaml file")
         sys.exit(1)
 
 def discover_modules(modules: list = [], mod_group: str = "console_scripts") -> list[pkg_resources.EntryPoint]:
