@@ -1,4 +1,4 @@
-# Client
+# Teleplay
 
 Test a single or series of Python CLI programs all at once!
 
