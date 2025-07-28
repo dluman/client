@@ -49,6 +49,8 @@ def run_module(entry_point: pkg_resources.EntryPoint, arguments: list = []) -> N
             f"{entry_point.name}.{mod}"
         ), func)
 
+    # TODO: SEPARATE. THESE. CONCERNS.
+
     # Run the program entry point
     stdout = sys.stdout
     output = StringIO()
@@ -81,8 +83,17 @@ def main():
         # Attempt to assert it in various ways; need to make
         # type independent?
         try:
-            expected_type = type(outcome)
-            assert expected_type(result) == outcome
+            # Assumes that every output is a string; that seems
+            # very reasonable, given the process
+            if len(result.split()) > 1 and type(outcome) == list:
+                result = result.strip().split("\n")
+                if len(result) != len(outcome): raise AssertionError
+                for i in range(len(result)):
+                    expected_type = type(outcome[i])
+                    assert expected_type(result[i]) == outcome[i]
+            else:
+                expected_type = type(outcome)
+                assert expected_type(result) == outcome
         except AssertionError:
             sys.exit(1)
         # Blast the previously-supplied args
